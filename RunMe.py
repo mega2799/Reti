@@ -2,12 +2,14 @@ from subprocess import Popen
 import os
 import time
 
+pids = []
+
 def cmd(name) -> None:
-    Popen(["python3", name])
+    pids.append(Popen(["python3", name]).pid)
 
 files = os.popen("ls").readlines()
 
-pid = Popen(["python3","gatewayServer.py"]).pid
+pids.append(Popen(["python3","gatewayServer.py"]).pid)
 
 time.sleep(2)
 
@@ -17,6 +19,9 @@ for f in files:
         cmd(f.rstrip("\n"))
 
 
-# Uccide il processo sel server che altrimenti rimarrebbe in ascolto
+# Uccide i processi che altrimenti rimarrebbero attivi
 input("Exit [Y/Y]")
-os.popen("kill -9 " + str(pid)) 
+
+#os.popen("kill -9 " + str(pids)) 
+
+[os.popen("kill -9 " + str(i)) for i in pids]
