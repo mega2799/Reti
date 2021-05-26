@@ -11,10 +11,10 @@ print ('[G] gateway starting up on %s port %s' % server_address)
 sock.bind(server_address)
 
 while True:
-    print('[G] gateway waiting to receive message from the devices')
+#    print('[G] gateway waiting to receive message from the devices')
 
     data, address = sock.recvfrom(4096)
 
-    print('received %s bytes from %s' % (len(data), address))
+    print('\n**[G]** received %s bytes from %s' % (len(data), address))
 
-    print (data.decode('utf8'))
+    print(data.decode('utf8') + "\n")

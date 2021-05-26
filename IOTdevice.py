@@ -1,6 +1,8 @@
 import socket as s
 from datetime import datetime, timedelta
 import random
+import schedule
+import time
 
 gatewayAddress = 'localhost'
 
@@ -33,4 +35,13 @@ class Device:
         self.data = [self.day.strftime("%Y-%m-%d at %H:%M"), 19, 17 ]
        
     def updateData(self) -> None:
-        self.data = [(self.day + timedelta(1, 0)).strftime("%Y-%m-%d at %H:%M"), random.randint(-2, 35), random.randint(1,99)]
+        self.day = self.day + timedelta(1, 0)
+        self.data = [self.day.strftime("%Y-%m-%d at %H:%M"), random.randint(-2, 35), random.randint(1,99)]
+
+"""
+    def scheduleMe(self) -> None:
+        schedule.every(10).seconds.do(self.connect(self.toString()))       
+        while True:
+            schedule.run_pending()
+            time.sleep(1)
+"""   
