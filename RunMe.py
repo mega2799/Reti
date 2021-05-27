@@ -22,7 +22,7 @@ for f in files:
 
 
 # Uccide i processi che altrimenti rimarrebbero attivi
-input("Exit [Y/Y]")
+input("Enter a charachter to stop everthing\n")
 
 #os.popen("kill -9 " + str(pids)) 
 
