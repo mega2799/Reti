@@ -16,10 +16,9 @@ class Device:
 
     def toString(self) -> str:
         message = self.name + " "
-        message += self.ip + " "
         message += self.data[0] + " "
         message += str(self.data[1]) + " "
-        message += str(self.data[2]) + " "
+        message += str(self.data[2])
         return message
        
     def connect(self, message) -> None:
@@ -32,7 +31,7 @@ class Device:
         self.ip = ip
         print("[D]\tHi my name is: " + self.name + "\tip: " + self.ip)
         self.day = datetime.now()
-        self.data = [self.day.strftime("%Y-%m-%d at %H:%M"), 19, 17 ]
+        self.data = [self.day.strftime("%Y-%m-%d %H:%M"), 19, 17 ]
        
     def updateData(self) -> None:
         self.day = self.day + timedelta(1, 0)
