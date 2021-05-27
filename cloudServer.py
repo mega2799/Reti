@@ -2,6 +2,8 @@ import sys
 
 from socket import * 
 
+import tkinter as tk
+
 DEBUG = False
 
 serverSocket = socket(AF_INET, SOCK_STREAM)
@@ -12,7 +14,7 @@ serverSocket.bind(server_address)
 
 serverSocket.listen(1)
 
-print ('[C] the cloud server is up on port:',8989)
+print ('[C] the cloud server is listening up on port:',8989)
 
 while True:
 
@@ -34,3 +36,6 @@ while True:
 
     except IOError:
         print("Doveva annà cosi fratelli")
+
+
+
