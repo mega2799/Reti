@@ -12,7 +12,7 @@ serverSocket.bind(server_address)
 
 serverSocket.listen(1)
 
-print ('the cloud server is up on port:',8989)
+print ('[C] the cloud server is up on port:',8989)
 
 while True:
 
@@ -27,10 +27,10 @@ while True:
         if len(message) > 0 and DEBUG : 
             print(message.split())
         
-        dataList = message.split()
+        dataList = [elem.decode('utf-8') for elem in message.split()]
         
         if len(dataList) > 0:
-            print(dataList[0].decode('utf-8'))
+            print(dataList)
 
     except IOError:
         print("Doveva annà cosi fratelli")
