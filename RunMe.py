@@ -9,6 +9,8 @@ def cmd(name) -> None:
 
 files = os.popen("ls").readlines()
 
+pids.append(Popen(["python3","cloudServer.py"]).pid)
+
 pids.append(Popen(["python3","gatewayServer.py"]).pid)
 
 time.sleep(2)

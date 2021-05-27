@@ -16,9 +16,10 @@ class Device:
 
     def toString(self) -> str:
         message = self.name + " "
+        message += self.ip + " "
         message += self.data[0] + " "
         message += str(self.data[1]) + " "
-        message += str(self.data[2])
+        message += str(self.data[2]) + " "
         return message
        
     def connect(self, message) -> None:
@@ -35,7 +36,7 @@ class Device:
        
     def updateData(self) -> None:
         self.day = self.day + timedelta(1, 0)
-        self.data = [self.day.strftime("%Y-%m-%d at %H:%M"), random.randint(-2, 35), random.randint(1,99)]
+        self.data = [self.day.strftime("%Y-%m-%d %H:%M"), random.randint(-2, 35), random.randint(1,99)]
 
 """
     def scheduleMe(self) -> None:
