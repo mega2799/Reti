@@ -2,7 +2,7 @@ import socket as sk
 
 import time
 
-DEBUG = True 
+DEBUG = False 
 
 #UDP server
 sock = sk.socket(sk.AF_INET, sk.SOCK_DGRAM)

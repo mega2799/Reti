@@ -19,7 +19,7 @@ class Device:
         message += self.ip + " "
         message += self.data[0] + " "
         message += str(self.data[1]) + " "
-        message += str(self.data[2]) + " "
+        message += str(self.data[2])
         return message
        
     def connect(self, message) -> None:
@@ -30,7 +30,7 @@ class Device:
     def __init__(self, divinity: str, ip: str) -> None:
         self.name = divinity
         self.ip = ip
-        print("[D]\tHi my name is: " + self.name + "\tip: " + self.ip)
+        # print("[D]\tHi my name is: " + self.name + "\tip: " + self.ip)
         self.day = datetime.now()
         self.data = [self.day.strftime("%Y-%m-%d %H:%M"), 19, 17 ]
        
