@@ -11,14 +11,19 @@ Ho utlizzato alcune librerie per poter simulare questi device, **datetime** per 
 
 # IOTdevice 
 IOTdevice.py e' una classe che modella un device generico, contente metodi utili a quest'ulitmi
+
 `toString`
 Classico metodo con il quale si puo' stampare ogni informazione sul device 
+
 `connect` 
 Attraverso il quale il device si connette al gateway e con un messaggio creato dal toString che contiente tutti i dati 
+
 `init`
 Con cui si inizializza, quando il device si accende legge ora e data, un nome e dati inziali
+
 `updateData` 
 Simula il passare di 24 ore e produce dati randomici entro standard reali  
+
 `autentication`
 Simile al toString pero utilizzato dal cloudServer per ottenere un output con le sole informazioni utlili e stamparle in console
 
