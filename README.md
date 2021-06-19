@@ -1,4 +1,5 @@
 # Progetto Santoro Matteo
+
 ## Matricola 881608
 
 ho creato i file IOTdevice come interfaccia dei device e gateway per poter 
@@ -8,6 +9,9 @@ ho  simulato tramite il modulo schedule che i device inviino i dati una volta al
 # Come ho lavorato
 Ho pensato di svolgere la prima traccia cercando di simulare il comportamento di un device che raccoglie informazioni durante la giornata e poi le invia producendo dei dati "randomici"
 Ho utlizzato alcune librerie per poter simulare questi device, **datetime** per poter lavorare comodamente con le date e gli orari ai quali i dati vengono raccolti ed inviati quindi **timedelta**  per poter comodamente trascorrere giornate, **schedule** per poter inviare periodicamente i dati, io ho impostato come periodo alcuni secondi per testare il funzionamento dell'elaborato ma la libreria **schedule** permette di compiere una routine ogni giorno ad un orario specifico, ogni settimana e cosi' via
+
+``pip install schedule``
+
 
 # IOTdevice 
 IOTdevice.py e' una classe che modella un device generico, contente metodi utili a quest'ulitmi
@@ -33,3 +37,5 @@ Simula il passare di 24 ore e produce dati randomici entro standard reali
 Simile al toString pero utilizzato dal cloudServer per ottenere un output con le sole informazioni utlili e stamparle in console
 
 # gateway
+
+
