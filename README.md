@@ -38,4 +38,10 @@ Simile al toString pero utilizzato dal cloudServer per ottenere un output con le
 
 # gateway
 
+Il gateway riceve una volta al giorno i dati tramite una connessione UDP dai device, all' interno del ciclo pero' prima di poter trasmettere al successivo aspetta di ricevere idati da tutti e quattro i device, cosi da poter effettuare una sola trasmissione TCP
+
+# cloudServer 
+
+il cloud si occupa di ricevere i dati che sono stati trasmessi al gateway, utilizza un metodo della classe IOTdevice per poter formattare e stamapare in console i rilevamenti con i rispettivi orari e ip di provenienza e calcola il tempo di viaggio dei dati grazie a Datetime
+
 
