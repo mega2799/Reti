@@ -10,6 +10,9 @@ Ho utlizzato alcune librerie per poter simulare questi device, **datetime** per 
 
 ``pip install schedule``
 
+# Test 
+
+> per testare `python3 RunMe.py` oppure `./RunMe.py`
 
 # IOTdevice 
 IOTdevice.py e' una classe che modella un device generico, contente metodi utili a quest'ulitmi
@@ -41,6 +44,8 @@ Il gateway riceve una volta al giorno i dati tramite una connessione UDP dai dev
 # cloudServer 
 
 il cloud si occupa di ricevere i dati che sono stati trasmessi al gateway, utilizza un metodo della classe IOTdevice per poter formattare e stamapare in console i rilevamenti con i rispettivi orari e ip di provenienza e calcola il tempo di viaggio dei dati grazie a Datetime
+
+> Sia gateway che cloudServer hanno una variabile DEBUG che puo tornare utile per poter verificarne il funzionamento, nello sviluppo le ho usate e ridotte nella consegna 
 
 # RunMe 
 
