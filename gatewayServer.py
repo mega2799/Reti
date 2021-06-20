@@ -39,7 +39,8 @@ while True:
     
     devicesCounter += 1
     lecture.append(data)
-    
+    if DEBUG:
+        print("got data: ", devicesCounter)
     # I dati vengono inviati solo quando vengono ricevuti da tutti i device
     if devicesCounter == 4:
         # TCP client
