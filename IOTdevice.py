@@ -25,7 +25,10 @@ class Device:
     def connect(self, message) -> None:
         sock = s.socket(s.AF_INET, s.SOCK_DGRAM)
         gateway = (gatewayAddress, 9898)
+        time1 = time.perf_counter()
         send = sock.sendto(message.encode(), gateway)
+        time2 = time.perf_counter()
+        print("[D] il device " + self.name + " ha impiegato per la trasmissione:", time2 - time1, "s")
  
     def __init__(self, divinity: str, ip: str) -> None:
         self.name = divinity
