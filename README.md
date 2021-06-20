@@ -2,9 +2,7 @@
 
 ## Matricola 881608
 
-ho creato i file IOTdevice come interfaccia dei device e gateway per poter 
-ricevere i dati dai seguenti device
-ho  simulato tramite il modulo schedule che i device inviino i dati una volta al giorno nel mio caso ogni 10 sec
+![](/img/grafico.png)
 
 # Come ho lavorato
 Ho pensato di svolgere la prima traccia cercando di simulare il comportamento di un device che raccoglie informazioni durante la giornata e poi le invia producendo dei dati "randomici"
