@@ -32,17 +32,19 @@ class Device:
         self.ip = ip
         # print("[D]\tHi my name is: " + self.name + "\tip: " + self.ip)
         self.day = datetime.now()
-        self.data = [self.day.strftime("%Y-%m-%d %H:%M:%S.%f"), 19, 17 ]
-       
+        self.data = [self.day.strftime("%Y-%m-%d %H:%M:%S.%f"), random.randint(-2, 35), random.randint(1,99)]
+
+    # Ogni device invia i dati in intervalli di tempo diverso
     def updateData(self) -> None:
         self.day = datetime.now() + timedelta(1, 0)
         self.data = [self.day.strftime("%Y-%m-%d %H:%M:%S.%f"), random.randint(-2, 35), random.randint(1,99)]
 
-    def autentication(self, name, date, time, humidity, temperature) -> str:
+    def autentication(self, name, ip, date, time, humidity, temperature) -> str:
         attributes = ""
         attributes += name + "\t"
+        attributes += ip + "\t"
         attributes += date + "\t"
         attributes += time + "\t\t"
-        attributes += humidity + "\t"
-        attributes += temperature+ "\t"
+        attributes += humidity + "\t\t\t"
+        attributes += temperature 
         return attributes
