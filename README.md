@@ -49,4 +49,4 @@ il cloud si occupa di ricevere i dati che sono stati trasmessi al gateway, utili
 
 # RunMe 
 
-Il file python RunMe va esseguito per poter comodamente far partire i vari device e server, hoscelto di usare i vari file Device*.py per poter simulare i singoli device, e per poi poter disattivare tutto comodamente ho preso i pid dei processi e li termino con il comando kill altrimenti i processi sarebbero rimasti attivi in background 
+Il file python RunMe va eseguito per poter comodamente far partire i vari device e server, hoscelto di usare i vari file Device*.py per poter simulare i singoli device, e per poi poter disattivare tutto comodamente ho preso i pid dei processi e li termino con il comando kill altrimenti i processi sarebbero rimasti attivi in background 
