@@ -4,6 +4,8 @@ import time
 
 DEBUG = False 
 
+BufferDim = 4096
+
 #UDP server
 sock = sk.socket(sk.AF_INET, sk.SOCK_DGRAM)
 
@@ -12,7 +14,9 @@ server_address = ('localhost', 9898)
 # Cloud server
 client_address = ('localhost', 8989)
 
-print ('[G] gateway starting up on %s port %s' % server_address)
+print("[G] gateway starting up on %s port %s" % server_address)
+
+print("[G] Buffer Dimension: ", BufferDim) 
 
 sock.bind(server_address)
 
@@ -24,7 +28,7 @@ while True:
     if DEBUG:
         print('[G] gateway waiting to receive message from the devices')
 
-    data, address = sock.recvfrom(4096)
+    data, address = sock.recvfrom(BufferDim)
 
  #   listData = data.decode('utf-8').split(" ")
 
@@ -35,7 +39,8 @@ while True:
     
     devicesCounter += 1
     lecture.append(data)
-
+    
+    # I dati vengono inviati solo quando vengono ricevuti da tutti i device
     if devicesCounter == 4:
         # TCP client
         clientsocket = sk.socket(sk.AF_INET, sk.SOCK_STREAM)
@@ -43,11 +48,12 @@ while True:
         try:
             clientsocket.connect(client_address)
         except Exception as err:
-            print("bad Luckke")
+            print("bad Luck")
         
-        #clientsocket.send(data)
+        time1 = time.perf_counter()
         [clientsocket.send(f) for f in lecture]
-
+        time2 = time.perf_counter()
+        print("[G] tempo impiegato per la trasmissione: ", time2 - time1)
         clientsocket.close()
 
         devicesCounter = 0
