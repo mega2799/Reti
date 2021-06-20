@@ -1,5 +1,9 @@
+#!/usr/bin/python3 
+
 from subprocess import Popen
+
 import os
+
 import time
 
 pids = []
@@ -13,7 +17,7 @@ pids.append(Popen(["python3","cloudServer.py"]).pid)
 
 pids.append(Popen(["python3","gatewayServer.py"]).pid)
 
-time.sleep(2)
+#time.sleep(2)
 
 # Accende i vari device
 for f in files:
@@ -24,6 +28,7 @@ for f in files:
 # Uccide i processi che altrimenti rimarrebbero attivi
 input("Enter a charachter to stop everthing\n")
 
-#os.popen("kill -9 " + str(pids)) 
+# Potrebbe uccidere anche processi non relativi all'elaborato ma molto comodo comunque
+#os.popen("killall python3")
 
 [os.popen("kill -9 " + str(i)) for i in pids]
