@@ -42,4 +42,6 @@ Il gateway riceve una volta al giorno i dati tramite una connessione UDP dai dev
 
 il cloud si occupa di ricevere i dati che sono stati trasmessi al gateway, utilizza un metodo della classe IOTdevice per poter formattare e stamapare in console i rilevamenti con i rispettivi orari e ip di provenienza e calcola il tempo di viaggio dei dati grazie a Datetime
 
+# RunMe 
 
+Il file python RunMe va esseguito per poter comodamente far partire i vari device e server, hoscelto di usare i vari file Device*.py per poter simulare i singoli device, e per poi poter disattivare tutto comodamente ho preso i pid dei processi e li termino con il comando kill altrimenti i processi sarebbero rimasti attivi in background 
