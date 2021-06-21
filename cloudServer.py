@@ -6,7 +6,7 @@ from IOTdevice import Device
 
 from datetime import datetime
 
-DEBUG = False
+DEBUG = False 
 
 BufferDIM = 1048 
 
@@ -40,10 +40,10 @@ while True:
         
         for k in range(0,len(dataList),6):
             print("-----------------------------------------------------------------------------------")   
-            print("Name\t|\tIP\t|\tDate\t|\tTime\t|\tTemperature\t|\tHumidity\t|")
+            print("Name\t|\tIP\t|\tDate\t|\tTime\t|\tHumidity\t|\tTemperature\t|")
             actual = datetime.strptime(datetime.now().strftime("%H:%M:%S.%f"), "%H:%M:%S.%f")
             
-            print(tmp.autentication(dataList[k], dataList[k+1], dataList[k+2], dataList[k+3], dataList[k +4], dataList[k+5]))
+            print(tmp.autentication(dataList[k], dataList[k+1], dataList[k+2], dataList[k+3], dataList[k+5], dataList[k+4]))
 
             delay = (actual - datetime.strptime(dataList[k+3], "%H:%M:%S.%f")).total_seconds()
 
