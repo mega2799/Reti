@@ -6,7 +6,7 @@ from IOTdevice import Device
 
 from datetime import datetime
 
-DEBUG = False 
+DEBUG = False
 
 BufferDIM = 1048 
 
@@ -39,7 +39,7 @@ while True:
         dataList = [elem.decode('utf-8') for elem in message.split()]
         
         for k in range(0,len(dataList),6):
-            print("-----------------------------------------------------------------------------------")   
+            print("---------------------------------------------------------------------------------------------------------")
             print("Name\t|\tIP\t|\tDate\t|\tTime\t|\tHumidity\t|\tTemperature\t|")
             actual = datetime.strptime(datetime.now().strftime("%H:%M:%S.%f"), "%H:%M:%S.%f")
             
