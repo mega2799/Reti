@@ -26,7 +26,7 @@ for f in files:
 
 
 # Uccide i processi che altrimenti rimarrebbero attivi
-input("Enter a charachter to stop everthing\n")
+input("Press Enter or a character to stop everthing\n")
 
 # Potrebbe uccidere anche processi non relativi all'elaborato ma molto comodo comunque
 #os.popen("killall python3")

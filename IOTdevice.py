@@ -48,6 +48,6 @@ class Device:
         attributes += ip + "\t"
         attributes += date + "\t"
         attributes += time + "\t\t"
-        attributes += humidity + "\t\t\t"
-        attributes += temperature 
+        attributes += humidity + "%" + "\t\t\t"
+        attributes += temperature + "°"
         return attributes
